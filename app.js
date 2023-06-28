@@ -102,7 +102,7 @@ app.post("/",(req,res)=>{
         name : item
     });
   
-    console.log(listName)
+    // console.log(listName)
     if(listName === "Today"){
         newItem.save();
         res.redirect('/');
@@ -110,7 +110,7 @@ app.post("/",(req,res)=>{
     else{
         List.findOne({name : listName})
             .then((foundList)=>{
-                console.log(foundList);
+                // console.log(foundList);
                 foundList.items.push(newItem);
                 foundList.save();
                 res.redirect("/"+listName);
